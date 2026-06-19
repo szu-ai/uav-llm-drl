@@ -77,7 +77,7 @@ checked command v_c_t -> autopilot interface / simulation control
 ### Unified framework
 
 <p align="justify">
-The main framework figure in <code>figs/framework.pdf</code> shows the full information flow: mission encoding, PPO speed proposal, VSLAM-health risk scoring, deterministic stack-level command checking, autopilot execution, and paired source-target validation. GitHub may open PDF figures in a separate preview tab.
+The main framework figure in <code>figs/framework.png</code> shows the full information flow: mission encoding, PPO speed proposal, VSLAM-health risk scoring, deterministic stack-level command checking, autopilot execution, and paired source-target validation. GitHub may open PDF figures in a separate preview tab.
 </p>
 
 <p align="center">
