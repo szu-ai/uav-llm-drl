@@ -81,7 +81,7 @@ The main framework figure in <code>figs/framework.png</code> shows the full info
 </p>
 
 <p align="center">
-  <a href="./figs/framework.pdf"><b>Open framework figure: figs/framework.pdf</b></a>
+  <a href="./figs/framework.png"><b>Open framework figure: figs/framework.png</b></a>
 </p>
 
 ### Inspection and validation procedure
@@ -155,7 +155,7 @@ uav-llm-drl-main/
 │
 ├── figs/
 │   ├── a.txt
-│   ├── framework.pdf
+│   ├── framework.png
 │   └── inspect.png
 │
 ├── graphs/
@@ -781,12 +781,12 @@ The target evaluation commands expect:
 
 Run source-domain training first or update `--model-path` to the correct checkpoint.
 
-### GitHub does not display `framework.pdf` inline
+### GitHub does not display `framework.png` inline
 
 Open the file link directly:
 
 ```text
-figs/framework.pdf
+figs/framework.png
 ```
 
 GitHub usually previews PDF files in a separate page rather than embedding them inside README text.
