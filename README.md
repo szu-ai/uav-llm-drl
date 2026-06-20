@@ -112,7 +112,7 @@ uav-llm-drl-main/
 │   ├── speed.zip                      <- speed-control and sweep outputs
 │   └── uav_llm.zip                    <- proposed method logs/checkpoints/artifacts
 │
-├── fig2/
+├── figs/
 │   ├── e1/
 │   │   ├── 
 │   │   ├── downcam_heatmap_ep0019.png
@@ -130,9 +130,9 @@ uav-llm-drl-main/
 │   └── power.png                      <- power-plant source-domain visual
 │
 ├── graphs/
-│   ├── drift_speed_tradeoff.pdf       <- drift return, CVaR, and speed comparison
-│   ├── override.pdf                   <- governor override and gate behavior
-│   └── vslam_error_loss.pdf           <- ATE and tracking-loss comparison
+│   ├── drift_speed_tradeoff.png       <- drift return, CVaR, and speed comparison
+│   ├── override.png                   <- governor override and gate behavior
+│   └── vslam_error_loss.png           <- ATE and tracking-loss comparison
 │
 └── README.md
 ```
