@@ -36,8 +36,8 @@ The system is designed for planned-route infrastructure inspection. The UAV foll
 </p>
 
 <p align="center">
-  <img src="./fig2/power.png" width="46%" alt="Power plant source domain"/>
-  <img src="./fig2/indust.png" width="46%" alt="Industrial target domain"/>
+  <img src="./figs/power.png" width="46%" alt="Power plant source domain"/>
+  <img src="./figs/indust.png" width="46%" alt="Industrial target domain"/>
 </p>
 
 <p align="center"><b>Source and target inspection scenes used by the repository.</b></p>
@@ -191,7 +191,7 @@ Suggested interpretation:
 ### Source-domain inspection artifacts
 
 <p align="center">
-  <img src="./fig2/e1/downcam_rgb_sequence_ep0020.png" width="48%" alt="Source-domain downward RGB sequence"/>
+  <img src="./figs/e1/downcam_rgb_sequence_ep0020.png" width="48%" alt="Source-domain downward RGB sequence"/>
 </p>
 
 <p align="justify">
@@ -199,13 +199,13 @@ These images show the source-domain visual stream and heatmap-style localization
 </p>
 
 <p align="center">
-  <img src="./fig2/e1/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Source-domain visual feature heatmap sequence"/>
+  <img src="./figs/e1/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Source-domain visual feature heatmap sequence"/>
 </p>
 
 ### Target-domain inspection artifacts
 
 <p align="center">
-  <img src="./fig2/e2/downcam_rgb_sequence_ep0020.png" width="48%" alt="Target-domain downward RGB sequence"/>
+  <img src="./figs/e2/downcam_rgb_sequence_ep0020.png" width="48%" alt="Target-domain downward RGB sequence"/>
 </p>
 
 <p align="justify">
@@ -213,17 +213,17 @@ These images summarize the target industrial scene used for zero-shot evaluation
 </p>
 
 <p align="center">
-  <img src="./fig2/e2/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Target-domain visual feature heatmap sequence"/>
+  <img src="./figs/e2/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Target-domain visual feature heatmap sequence"/>
 </p>
 
 ### VSLAM trajectories
 
 <p align="center">
-  <img src="./fig2/e1/episode_0020_vslam_trajectory.png" width="48%" alt="Source-domain VSLAM trajectory"/>
+  <img src="./figs/e1/episode_0020_vslam_trajectory.png" width="48%" alt="Source-domain VSLAM trajectory"/>
 </p>
 
 <p align="center">
-  <img src="./fig2/e2/episode_0020_vslam_trajectory.png" width="48%" alt="Target-domain VSLAM trajectory"/>
+  <img src="./figs/e2/episode_0020_vslam_trajectory.png" width="48%" alt="Target-domain VSLAM trajectory"/>
 </p>
 
 ### Graphs
