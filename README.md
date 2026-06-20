@@ -42,7 +42,7 @@ The system is designed for planned-route infrastructure inspection. The UAV foll
 
 <p align="center"><b>Source and target inspection scenes used by the repository.</b></p>
 
-## Framework Figure
+## Unified Framework 
 
 <p align="center">
   <img src="./figs/framework.png" width="92%" alt="Risk-aware UAV speed-control framework"/>
@@ -202,15 +202,6 @@ Suggested interpretation:
 
 ## Visual Results
 
-### Inspection and validation procedure
-
-<p align="center">
-  <img src="./figs/inspect.png" width="86%" alt="Inspection and validation procedure in Isaac Sim"/>
-</p>
-
-<p align="justify">
-This figure shows how the UAV follows a corridor-bounded inspection route in Isaac Sim, adapts speed under VSLAM risk, and logs source-target route states for transfer and drift-tail validation. It complements the framework figure by showing the evaluation workflow and inspection context.
-</p>
 
 ### Source-domain inspection artifacts
 
