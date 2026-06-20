@@ -26,12 +26,12 @@ The framework separates <b>policy proposal</b> from <b>command execution</b>. A 
 </p>
 
 <p align="justify">
-The repository name includes historical script names such as <code>uav_llm.py</code> and <code>uav_gpt.py</code>. In the paper-aligned setting, language is not used at the control rate. Mission text is converted once per episode into a compact numeric risk context, and the controller receives only this bounded mission vector and scalar risk preference.
+The repository name includes historical script names such as <code>uav_llm.py</code> and <code>uav_gpt.py</code>. In the setting, language is not used at the control rate. Mission text is converted once per episode into a compact numeric risk context, and the controller receives only this bounded mission vector and scalar risk preference.
 </p>
 
 ---
 
-## Paper-Aligned System View
+## System View
 
 <p align="justify">
 The system is designed for planned-route infrastructure inspection. The UAV follows fixed route waypoints, observes scene and localization-health signals, proposes speed through the learned policy, applies risk-aware speed correction, and executes only the checked command. The evaluation uses a source power-plant scene and a target industrial scene to test zero-shot source-to-target behavior under VSLAM degradation.
@@ -151,7 +151,7 @@ uav-llm-drl-main/
 | Script | Main role | Typical use |
 |---|---|---|
 | `code/uav_llm.py` | Main source-domain PPO workflow with mission-risk context, VSLAM proxy, command checking, Isaac Sim scene generation, logging, and optional ROS 2 / cuVSLAM bridge hooks. | Train or evaluate the proposed policy in the source power-plant domain. |
-| `code/uav_fix.py` | Corrected source-domain PPO/governor workflow used for stable paper-aligned runs. | Re-run proposed source-domain training/evaluation with fixed settings. |
+| `code/uav_fix.py` | Corrected source-domain PPO/governor workflow used for stable  runs. | Re-run proposed source-domain training/evaluation with fixed settings. |
 | `code/uav_llm_e2.py` | Target-domain proposed method evaluation script. | Load the source-trained policy and evaluate zero-shot in the industrial target domain. |
 | `code/uav_e2_eval_baselines.py` | Target evaluation wrapper for the source-trained model and baseline comparison workflow. | Run target-domain evaluation with consistent logging. |
 | `code/uav_fixed_no_governor.py` | Source fixed-speed baseline without command governor. | Isolate fixed-speed behavior without safety trimming. |
@@ -456,7 +456,7 @@ cd ~/IsaacLab
 
 ---
 
-## Target-Domain Results from the Paper-Aligned Evaluation
+## Target-Domain Results from the  Evaluation
 
 The paper reports the following zero-shot target-domain comparison for the seed-7 checkpoint:
 
