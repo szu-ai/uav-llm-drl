@@ -42,6 +42,8 @@ The system is designed for planned-route infrastructure inspection. The UAV foll
 
 <p align="center"><b>Source and target inspection scenes used by the repository.</b></p>
 
+## Framework Figure
+
 <p align="center">
   <img src="./figs/framework.png" width="92%" alt="Risk-aware UAV speed-control framework"/>
 </p>
