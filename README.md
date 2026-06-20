@@ -218,14 +218,17 @@ These images summarize the target industrial scene used for zero-shot evaluation
   <img src="./fig2/e2/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Target-domain visual feature heatmap sequence"/>
 </p>
 
-### VSLAM trajectory examples
+### VSLAM trajectories
 
 <p align="center">
   <img src="./fig2/e1/episode_0020_vslam_trajectory.png" width="48%" alt="Source-domain VSLAM trajectory"/>
+</p>
+
+<p align="center">
   <img src="./fig2/e2/episode_0020_vslam_trajectory.png" width="48%" alt="Target-domain VSLAM trajectory"/>
 </p>
 
-### Paper graph files
+### Graph files
 
 GitHub may open these PDF graphs as separate files rather than inline images:
 
