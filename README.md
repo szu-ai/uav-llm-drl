@@ -1,6 +1,6 @@
 # Robust Speed Control for UAV Infrastructure Inspection Under Visual Localization Degradation
 
-**UAV-LLM-DRL: Risk-aware speed control, VSLAM-health monitoring, and command checking for GPS-denied UAV inspection**
+**Risk-aware speed control, VSLAM-health monitoring, and command checking for GPS-denied UAV inspection**
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![Isaac Sim](https://img.shields.io/badge/Isaac%20Sim-Required-green)](https://developer.nvidia.com/isaac/sim)
