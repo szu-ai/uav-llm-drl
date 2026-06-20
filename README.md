@@ -94,7 +94,6 @@ The source policy is trained in a smoke-degraded power-plant environment and eva
 ```text
 uav-llm-drl-main/
 ├── code/
-│   ├── 
 │   ├── uav_e2_eval_baselines.py       <- target-domain evaluation loader for source-trained PPO
 │   ├── uav_e2_fixed_governor.py       <- target fixed-speed baseline with command governor
 │   ├── uav_e2_fixed_no_governor.py    <- target fixed-speed baseline without governor
@@ -108,7 +107,6 @@ uav-llm-drl-main/
 │   └── uav_pid.py                     <- source-domain PID + governor baseline
 │
 ├── data/
-│   ├── 
 │   ├── e1.zip                         <- source-domain records and artifacts
 │   ├── eval.zip                       <- evaluation logs/results archive
 │   ├── other.zip                      <- auxiliary experiment files
@@ -117,7 +115,6 @@ uav-llm-drl-main/
 │   └── uav_llm.zip                    <- proposed method logs/checkpoints/artifacts
 │
 ├── fig2/
-│   ├── 
 │   ├── e1/
 │   │   ├── 
 │   │   ├── downcam_heatmap_ep0019.png
@@ -126,7 +123,6 @@ uav-llm-drl-main/
 │   │   ├── episode_0020_bottom_visual_heatmap_sequence.png
 │   │   └── episode_0020_vslam_trajectory.png
 │   ├── e2/
-│   │   ├── 
 │   │   ├── downcam_heatmap_ep0020.png
 │   │   ├── downcam_rgb_sequence_ep0020.png
 │   │   ├── episode_0019_vslam_trajectory.png
@@ -136,7 +132,6 @@ uav-llm-drl-main/
 │   └── power.png                      <- power-plant source-domain visual
 │
 ├── graphs/
-│   ├── 
 │   ├── drift_speed_tradeoff.pdf       <- drift return, CVaR, and speed comparison
 │   ├── override.pdf                   <- governor override and gate behavior
 │   └── vslam_error_loss.pdf           <- ATE and tracking-loss comparison
