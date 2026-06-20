@@ -9,8 +9,6 @@
 [![RL](https://img.shields.io/badge/RL-PPO%20Speed%20Policy-red)](#method-summary)
 [![License](https://img.shields.io/badge/License-Research%20Use-lightgrey)](#license)
 
-> **Paper:** Robust Speed Control for UAV Infrastructure Inspection Under Visual Localization Degradation  
-> **Repository:** <https://github.com/szu-ai/uav-llm-drl>  
 > **Main idea:** A learned policy proposes a forward speed, but a deterministic command-checking layer verifies VSLAM risk, corridor deviation, yaw error, rate limits, and fallback conditions before the final command is executed.
 
 ---
