@@ -226,13 +226,31 @@ These images summarize the target industrial scene used for zero-shot evaluation
   <img src="./fig2/e2/episode_0020_vslam_trajectory.png" width="48%" alt="Target-domain VSLAM trajectory"/>
 </p>
 
-### Graph files
+### Graphs
 
-GitHub may open these PDF graphs as separate files rather than inline images:
+<p align="center">
+  <img src="./graphs/vslam_error_loss.png" width="48%" alt="Target-domain ATE and tracking-loss comparison"/>
+</p>
 
-- [`graphs/vslam_error_loss.pdf`](./graphs/vslam_error_loss.pdf) — target-domain ATE and tracking-loss comparison.
-- [`graphs/drift_speed_tradeoff.pdf`](./graphs/drift_speed_tradeoff.pdf) — drift return, CVaR drift, and speed trade-off.
-- [`graphs/override.pdf`](./graphs/override.pdf) — governor intervention and gate behavior.
+<p align="justify">
+Target-domain ATE and tracking-loss comparison.
+</p>
+
+<p align="center">
+  <img src="./graphs/drift_speed_tradeoff.png" width="48%" alt="Drift return, CVaR drift, and speed trade-off"/>
+</p>
+
+<p align="justify">
+Drift return, CVaR drift, and speed trade-off.
+</p>
+
+<p align="center">
+  <img src="./graphs/override.png" width="48%" alt="Governor intervention and gate behavior"/>
+</p>
+
+<p align="justify">
+Governor intervention and gate behavior.
+</p>
 
 ---
 
