@@ -42,6 +42,14 @@ The system is designed for planned-route infrastructure inspection. The UAV foll
 
 <p align="center"><b>Source and target inspection scenes used by the repository.</b></p>
 
+<p align="center">
+  <img src="./figs/framework.png" width="92%" alt="Risk-aware UAV speed-control framework"/>
+</p>
+
+<p align="justify">
+The framework figure summarizes the complete control loop. The mission record is encoded once per episode into numeric context and a risk preference. The PPO policy samples a raw action and proposes a bounded speed, while VSLAM health produces a localization-risk score from feature support, inlier quality, pose uncertainty, yaw uncertainty, and tracking-loss signals. The stack-level governor then checks corridor error, yaw error, tracking loss, and risk thresholds before sending only the checked speed command to the autopilot interface. The same framework supports source-domain training and zero-shot target-domain evaluation through paired route-progress logs.
+</p>
+
 ---
 
 ## Method Summary
@@ -105,6 +113,7 @@ uav-llm-drl-main/
 │   └── uav_pid.py                     <- source-domain PID + governor baseline
 │
 ├── data/
+│   ├── a.txt                          <- placeholder file for preserving the data folder
 │   ├── e1.zip                         <- source-domain records and artifacts
 │   ├── eval.zip                       <- evaluation logs/results archive
 │   ├── other.zip                      <- auxiliary experiment files
@@ -114,8 +123,6 @@ uav-llm-drl-main/
 │
 ├── figs/
 │   ├── e1/
-│   │   ├── 
-│   │   ├── downcam_heatmap_ep0019.png
 │   │   ├── downcam_heatmap_sequence_ep0020.png
 │   │   ├── downcam_rgb_sequence_ep0020.png
 │   │   ├── episode_0020_bottom_visual_heatmap_sequence.png
@@ -123,16 +130,21 @@ uav-llm-drl-main/
 │   ├── e2/
 │   │   ├── downcam_heatmap_ep0020.png
 │   │   ├── downcam_rgb_sequence_ep0020.png
-│   │   ├── episode_0019_vslam_trajectory.png
 │   │   ├── episode_0020_bottom_visual_heatmap_sequence.png
 │   │   └── episode_0020_vslam_trajectory.png
+│   ├── framework.png                  <- overall risk-aware speed-control framework
 │   ├── indust.png                     <- industrial target-domain visual
+│   ├── inspect.png                    <- inspection and validation procedure
 │   └── power.png                      <- power-plant source-domain visual
 │
 ├── graphs/
-│   ├── drift_speed_tradeoff.png       <- drift return, CVaR, and speed comparison
-│   ├── override.png                   <- governor override and gate behavior
-│   └── vslam_error_loss.png           <- ATE and tracking-loss comparison
+│   ├── a.txt                          <- placeholder file for preserving the graph folder
+│   ├── drift_speed_tradeoff.pdf       <- vector version of drift/speed trade-off graph
+│   ├── drift_speed_tradeoff.png       <- GitHub-preview version of drift/speed trade-off graph
+│   ├── override.pdf                   <- vector version of override/gate graph
+│   ├── override.png                   <- GitHub-preview version of override/gate graph
+│   ├── vslam_error_loss.pdf           <- vector version of ATE/tracking-loss graph
+│   └── vslam_error_loss.png           <- GitHub-preview version of ATE/tracking-loss graph
 │
 └── README.md
 ```
@@ -188,6 +200,16 @@ Suggested interpretation:
 
 ## Visual Results
 
+### Inspection and validation procedure
+
+<p align="center">
+  <img src="./figs/inspect.png" width="86%" alt="Inspection and validation procedure in Isaac Sim"/>
+</p>
+
+<p align="justify">
+This figure shows how the UAV follows a corridor-bounded inspection route in Isaac Sim, adapts speed under VSLAM risk, and logs source-target route states for transfer and drift-tail validation. It complements the framework figure by showing the evaluation workflow and inspection context.
+</p>
+
 ### Source-domain inspection artifacts
 
 <p align="center">
@@ -226,31 +248,6 @@ These images summarize the target industrial scene used for zero-shot evaluation
   <img src="./figs/e2/episode_0020_vslam_trajectory.png" width="48%" alt="Target-domain VSLAM trajectory"/>
 </p>
 
-### Graphs
-
-<p align="center">
-  <img src="./graphs/vslam_error_loss.png" width="48%" alt="Target-domain ATE and tracking-loss comparison"/>
-</p>
-
-<p align="justify">
-Target-domain ATE and tracking-loss comparison.
-</p>
-
-<p align="center">
-  <img src="./graphs/drift_speed_tradeoff.png" width="48%" alt="Drift return, CVaR drift, and speed trade-off"/>
-</p>
-
-<p align="justify">
-Drift return, CVaR drift, and speed trade-off.
-</p>
-
-<p align="center">
-  <img src="./graphs/override.png" width="48%" alt="Governor intervention and gate behavior"/>
-</p>
-
-<p align="justify">
-Governor intervention and gate behavior.
-</p>
 
 ---
 
@@ -476,7 +473,7 @@ cd ~/IsaacLab
 
 ---
 
-## Target-Domain Results from the  Evaluation
+## Target-Domain Results from the Evaluation
 
 The work reports the following zero-shot target-domain comparison for the seed-7 checkpoint:
 
@@ -495,21 +492,23 @@ These values show that the proposed policy-governor combination is not simply sl
 
 ## Reproducing Graphs
 
-The graphs are stored as PDF files:
+The repository includes both vector PDF files and GitHub-preview PNG files:
 
 ```text
 graphs/vslam_error_loss.pdf
+graphs/vslam_error_loss.png
 graphs/drift_speed_tradeoff.pdf
+graphs/drift_speed_tradeoff.png
 graphs/override.pdf
+graphs/override.png
 ```
 
-If you want GitHub to preview them inline as images, convert them to PNG:
+Use the PDF versions for papers and presentations that need vector quality. Use the PNG versions for GitHub README preview. If a PDF is updated and the PNG needs regeneration, run:
 
 ```bash
-mkdir -p graphs_png
-pdftoppm -png -r 300 graphs/vslam_error_loss.pdf graphs_png/vslam_error_loss
-pdftoppm -png -r 300 graphs/drift_speed_tradeoff.pdf graphs_png/drift_speed_tradeoff
-pdftoppm -png -r 300 graphs/override.pdf graphs_png/override
+pdftoppm -png -singlefile -r 300 graphs/vslam_error_loss.pdf graphs/vslam_error_loss
+pdftoppm -png -singlefile -r 300 graphs/drift_speed_tradeoff.pdf graphs/drift_speed_tradeoff
+pdftoppm -png -singlefile -r 300 graphs/override.pdf graphs/override
 ```
 
 ---
@@ -597,4 +596,38 @@ Pass the checkpoint explicitly:
 
 <p align="justify">
 This repository is a research prototype for controlled simulation and pre-HIL validation. It is not a field-ready autopilot system. Before real UAV deployment, the controller must be tested with hardware-in-the-loop, calibrated for the site and UAV platform, integrated with certified failsafe behavior, supervised by a safety pilot, and checked under local aviation and inspection regulations.
+</p>
+
+---
+
+## Graph Results
+
+### VSLAM error and tracking loss
+
+<p align="center">
+  <img src="./graphs/vslam_error_loss.png" width="72%" alt="Target-domain ATE and tracking-loss comparison"/>
+</p>
+
+<p align="justify">
+This graph compares target-domain localization accuracy and VSLAM tracking-loss behavior. The proposed PPO speed controller with the governor gives the lowest governed ATE and tracking-loss rate among the evaluated controllers, showing that the learned speed proposal is better aligned with the VSLAM-risk envelope than fixed-speed or PID scheduling.
+</p>
+
+### Drift-speed trade-off
+
+<p align="center">
+  <img src="./graphs/drift_speed_tradeoff.png" width="72%" alt="Drift return, CVaR drift, and speed trade-off"/>
+</p>
+
+<p align="justify">
+This graph connects speed behavior with drift-tail risk. It shows that the proposed method is not simply slower; it keeps a higher proposed speed than the fixed-governor and PID-governor baselines while reducing drift return and CVaR drift. This is important because safe inspection should reduce localization-induced drift without unnecessarily crawling along visually reliable route segments.
+</p>
+
+### Governor override and gate behavior
+
+<p align="center">
+  <img src="./graphs/override.png" width="72%" alt="Governor intervention and gate behavior"/>
+</p>
+
+<p align="justify">
+This graph summarizes command interventions and gate acceptance. A lower override rate means fewer policy proposals require correction by the governor. The proposed method reduces unnecessary interventions compared with fixed-speed plus governor and PID plus governor, while still keeping the command path checked against VSLAM risk, corridor error, yaw error, and fallback limits.
 </p>
