@@ -16,7 +16,7 @@
 ## Overview
 
 <p align="justify">
-This repository provides the code, evaluation data, figures, and paper graphs for <b>Robust Speed Control for UAV Infrastructure Inspection Under Visual Localization Degradation</b>. The work studies GPS-denied UAV inspection in infrastructure scenes where visual localization can degrade because of weak texture, smoke, repetitive structures, lighting changes, motion blur, yaw uncertainty, or intermittent VSLAM tracking loss. The goal is not open-ended UAV navigation; the route is already planned. The core problem is how to regulate forward speed safely when localization quality changes along that route.
+This repository provides the code, evaluation data, figures, and graphs for <b>Robust Speed Control for UAV Infrastructure Inspection Under Visual Localization Degradation</b>. The work studies GPS-denied UAV inspection in infrastructure scenes where visual localization can degrade because of weak texture, smoke, repetitive structures, lighting changes, motion blur, yaw uncertainty, or intermittent VSLAM tracking loss. The goal is not open-ended UAV navigation; the route is already planned. The core problem is how to regulate forward speed safely when localization quality changes along that route.
 </p>
 
 <p align="justify">
@@ -182,7 +182,7 @@ Suggested interpretation:
 | `data/seeds.zip` | Multi-seed records for robustness and variance checks. |
 | `data/speed.zip` | Speed-control analysis, governor behavior, and sweep outputs. |
 | `data/uav_llm.zip` | Proposed-method outputs, checkpoints, or mission-conditioned logs. |
-| `data/other.zip` | Additional auxiliary files used during paper development. |
+| `data/other.zip` | Additional auxiliary files used during development. |
 
 ---
 
@@ -451,7 +451,7 @@ cd ~/IsaacLab
 | `--mission-text` | Closed mission template used by the mission-risk encoder. |
 | `--slam-mode proxy` | Use the repeatable VSLAM proxy for controlled validation. |
 | `--slam-mode cuvslam` | Use cuVSLAM-related odometry/bridge path when configured. |
-| `--capture-rgb` | Save RGB/visual artifacts for paper figures. |
+| `--capture-rgb` | Save RGB/visual artifacts for figures. |
 | `--disable-figures` | Disable figure generation for faster runs. |
 | `--speed-min`, `--speed-max` | Speed bounds. |
 | `--governor-alpha`, `--governor-beta` | VSLAM-risk and mission-risk speed reduction gains. |
@@ -478,7 +478,7 @@ cd ~/IsaacLab
 
 ## Target-Domain Results from the  Evaluation
 
-The paper reports the following zero-shot target-domain comparison for the seed-7 checkpoint:
+The work reports the following zero-shot target-domain comparison for the seed-7 checkpoint:
 
 | Method | Speed `v_bar^p` (m/s) | ATE `E^a` (m) ↓ | Track loss `ell` (%) ↓ | Override `O` (%) ↓ | Gate `g` (%) | Drift `D` ↓ | CVaR ↓ |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -493,9 +493,9 @@ These values show that the proposed policy-governor combination is not simply sl
 
 ---
 
-## Reproducing Paper Graphs
+## Reproducing Graphs
 
-The paper graphs are stored as PDF files:
+The graphs are stored as PDF files:
 
 ```text
 graphs/vslam_error_loss.pdf
@@ -529,7 +529,7 @@ pdftoppm -png -r 300 graphs/override.pdf graphs_png/override
 ## Notes on VSLAM and ROS 2
 
 <p align="justify">
-The scripts support a repeatable simulation-side VSLAM proxy and include hooks for ROS 2 / cuVSLAM-style odometry and image bridge topics. The proxy is useful for controlled paper validation because it gives repeatable localization-health signals. It should not be interpreted as a replacement for a full field-ready SLAM backend.
+The scripts support a repeatable simulation-side VSLAM proxy and include hooks for ROS 2 / cuVSLAM-style odometry and image bridge topics. The proxy is useful for controlled validation because it gives repeatable localization-health signals. It should not be interpreted as a replacement for a full field-ready SLAM backend.
 </p>
 
 Common VSLAM-related options include:
@@ -598,46 +598,3 @@ Pass the checkpoint explicitly:
 <p align="justify">
 This repository is a research prototype for controlled simulation and pre-HIL validation. It is not a field-ready autopilot system. Before real UAV deployment, the controller must be tested with hardware-in-the-loop, calibrated for the site and UAV platform, integrated with certified failsafe behavior, supervised by a safety pilot, and checked under local aviation and inspection regulations.
 </p>
-
----
-
-## Limitations
-
-- Validation is performed in controlled Isaac Sim / pre-HIL settings.
-- The VSLAM proxy provides repeatable localization-health signals but is not a new SLAM backend.
-- The target domain is longer but visually easier than the source scene.
-- Empirical CVaR is diagnostic and depends on the number of evaluation episodes.
-- Mission text is closed-template and bounded; open-vocabulary mission understanding is outside the current validation.
-- Final deployment requires hardware testing, site-specific tuning, and certified safety procedures.
-
----
-
-## Citation
-
-If you use this repository, please cite the paper:
-
-```bibtex
-@article{borhan2026robustspeeduav,
-  title   = {Robust Speed Control for UAV Infrastructure Inspection Under Visual Localization Degradation},
-  author  = {Borhan, Uddin Md. and Raza, Arif and Lv, Bo and Li, Jianqiang and Chen, Jie},
-  journal = {IEEE Transactions on Automation Science and Engineering},
-  year    = {2026},
-  note    = {Code and resources available at https://github.com/szu-ai/uav-llm-drl}
-}
-```
-
----
-
-## License
-
-This repository is released for academic and research use. Add a project license file before public distribution if a specific open-source license is required.
-
----
-
-## Contact
-
-For questions about the repository or paper resources, please open an issue at:
-
-```text
-https://github.com/szu-ai/uav-llm-drl/issues
-```
