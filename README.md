@@ -11,8 +11,6 @@
 
 > **Paper:** Robust Speed Control for UAV Infrastructure Inspection Under Visual Localization Degradation  
 > **Repository:** <https://github.com/szu-ai/uav-llm-drl>  
-> **Authors:** Uddin Md. Borhan, Arif Raza, Bo Lv, Jianqiang Li, and Jie Chen  
-> **Affiliation:** Shenzhen University  
 > **Main idea:** A learned policy proposes a forward speed, but a deterministic command-checking layer verifies VSLAM risk, corridor deviation, yaw error, rate limits, and fallback conditions before the final command is executed.
 
 ---
