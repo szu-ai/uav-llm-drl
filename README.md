@@ -461,7 +461,7 @@ cd ~/IsaacLab
 
 ---
 
-## Metrics Reported by the Paper Workflow
+## Metrics 
 
 | Metric | Meaning | Direction |
 |---|---|---:|
