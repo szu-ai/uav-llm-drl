@@ -194,22 +194,28 @@ Suggested interpretation:
 
 <p align="center">
   <img src="./fig2/e1/downcam_rgb_sequence_ep0020.png" width="48%" alt="Source-domain downward RGB sequence"/>
-  <img src="./fig2/e1/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Source-domain visual feature heatmap sequence"/>
 </p>
 
 <p align="justify">
 These images show the source-domain visual stream and heatmap-style localization/feature-support artifacts from the power-plant inspection scene. They are useful for explaining why visual localization can degrade in smoke, repetitive structures, and weakly textured regions.
 </p>
 
+<p align="center">
+  <img src="./fig2/e1/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Source-domain visual feature heatmap sequence"/>
+</p>
+
 ### Target-domain inspection artifacts
 
 <p align="center">
   <img src="./fig2/e2/downcam_rgb_sequence_ep0020.png" width="48%" alt="Target-domain downward RGB sequence"/>
-  <img src="./fig2/e2/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Target-domain visual feature heatmap sequence"/>
 </p>
 
 <p align="justify">
 These images summarize the target industrial scene used for zero-shot evaluation. The target route is longer but visually easier because the scene contains more static and feature-rich structures than the smoke-degraded source scene.
+</p>
+
+<p align="center">
+  <img src="./fig2/e2/episode_0020_bottom_visual_heatmap_sequence.png" width="48%" alt="Target-domain visual feature heatmap sequence"/>
 </p>
 
 ### VSLAM trajectory examples
