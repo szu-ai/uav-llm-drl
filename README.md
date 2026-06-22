@@ -202,6 +202,9 @@ Suggested interpretation:
 
 ## Visual Results
 
+<p align="center">
+  <img src="./figs/inspect.png" width="75%" alt="inspection in both domains"/>
+</p>
 
 ### Source-domain inspection artifacts
 
